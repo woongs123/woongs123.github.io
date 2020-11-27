@@ -14,9 +14,10 @@
     boston_
     boston_ <-as.data.frame(boston_)
 
-![image](https://user-images.githubusercontent.com/74387174/100453149-d39be300-30fd-11eb-959c-9a9ce7aec9eb.png)
+
 
 ### Training set, Test set split / Train : Test = 9 : 1 
+![image](https://user-images.githubusercontent.com/74387174/100453149-d39be300-30fd-11eb-959c-9a9ce7aec9eb.png)
 
     set.seed(7)
     train <- sample(nrow(boston_), nrow(boston_)*0.9) 

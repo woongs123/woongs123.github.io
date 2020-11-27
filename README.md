@@ -45,7 +45,7 @@
     ggplot(boston_raw,aes(x=sqrt(MEDV))) + geom_histogram(bins=50)
     ggplot(boston_raw_bc,aes(x=MEDV_)) + geom_histogram(bins=50)
     
-![image](https://user-images.githubusercontent.com/74387174/100452718-098c9780-30fd-11eb-9e5b-0664c3a94b2f.png)
-![image](https://user-images.githubusercontent.com/74387174/100452758-1a3d0d80-30fd-11eb-8258-3f1d91524d89.png)
-![image](https://user-images.githubusercontent.com/74387174/100452770-232ddf00-30fd-11eb-87bd-feb1d898f2af.png)
+![image](https://user-images.githubusercontent.com/74387174/100452718-098c9780-30fd-11eb-9e5b-0664c3a94b2f.png) ![image](https://user-images.githubusercontent.com/74387174/100452758-1a3d0d80-30fd-11eb-8258-3f1d91524d89.png) ![image](https://user-images.githubusercontent.com/74387174/100452770-232ddf00-30fd-11eb-87bd-feb1d898f2af.png)
+
+
 

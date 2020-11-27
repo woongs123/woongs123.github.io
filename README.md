@@ -3,7 +3,7 @@
     setwd("C:/data")
     boston <- read.table("housing.data", head=F, encoding="utf-8")
     
-### Preserve raw
+### Preserve Raw file
     
     boston_ <- boston
     boston_
@@ -23,3 +23,24 @@
     boston_
     boston_test
 
+### Linear regression model assumption check - Normality of Residuals 
+
+    setwd("C:/data")
+    boston_raw <- read.table("housing.data", head=F, encoding="utf-8")
+    colnames(boston_raw) <- c("CRIM", "ZN", "INDUS", "CHAS", "NOX", "RM", "AGE", "DIS", "RAD", "TAX", "PTRATIO", "B1000", "LSTAT", "MEDV")
+
+
+# Box-cox transformation y
+
+    boston_raw_bc <- boston_raw
+    library(MASS)
+    box_df <- boxcox(boston_raw_bc$MEDV~1)
+    lam <- box_df$x[which.max(box_df$y)]
+    boston_raw_bc$MEDV_ <- (boston_raw_bc$MEDV^lam-1)/lam
+    ks.test(boston_raw_bc$MEDV_, "pnorm", mean= mean(boston_raw_bc$MEDV_), sd = sd(boston_raw_bc$MEDV_))
+    
+# MEDV vs SQRT(MEDV) vs BOXCOX(MEDV)
+
+    ggplot(boston_raw,aes(x=MEDV)) + geom_histogram(bins=50)
+    ggplot(boston_raw,aes(x=sqrt(MEDV))) + geom_histogram(bins=50)
+    ggplot(boston_raw_bc,aes(x=MEDV_)) + geom_histogram(bins=50)

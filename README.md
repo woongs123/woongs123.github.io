@@ -14,7 +14,7 @@
     boston_
     boston_ <-as.data.frame(boston_)
 
-
+---
 
 ### Training set, Test set split / Train : Test = 9 : 1 
 ![image](https://user-images.githubusercontent.com/74387174/100453149-d39be300-30fd-11eb-959c-9a9ce7aec9eb.png)
@@ -25,7 +25,8 @@
     boston_test <- boston_[-train,]
     boston_
     boston_test
-
+    
+---
 ### Linear regression model assumption check - Normality of Residuals 
 
     setwd("C:/data")
@@ -56,5 +57,5 @@
 ### BOXCOX(MEDV)
 ![image](https://user-images.githubusercontent.com/74387174/100452770-232ddf00-30fd-11eb-87bd-feb1d898f2af.png)
 
-
+---
 

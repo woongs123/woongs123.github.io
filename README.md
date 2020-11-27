@@ -30,7 +30,7 @@
     colnames(boston_raw) <- c("CRIM", "ZN", "INDUS", "CHAS", "NOX", "RM", "AGE", "DIS", "RAD", "TAX", "PTRATIO", "B1000", "LSTAT", "MEDV")
 
 
-# Box-cox transformation y
+### Box-cox transformation y
 
     boston_raw_bc <- boston_raw
     library(MASS)
@@ -39,7 +39,7 @@
     boston_raw_bc$MEDV_ <- (boston_raw_bc$MEDV^lam-1)/lam
     ks.test(boston_raw_bc$MEDV_, "pnorm", mean= mean(boston_raw_bc$MEDV_), sd = sd(boston_raw_bc$MEDV_))
     
-# MEDV vs SQRT(MEDV) vs BOXCOX(MEDV)
+### MEDV vs SQRT(MEDV) vs BOXCOX(MEDV)
 
     ggplot(boston_raw,aes(x=MEDV)) + geom_histogram(bins=50)
     ggplot(boston_raw,aes(x=sqrt(MEDV))) + geom_histogram(bins=50)
